@@ -3,13 +3,13 @@ pipeline {
 
    stages {
       stage('All') {
-         steps {
+          steps {
           echo  'cat c.txt'
-          cat c.txt
+          cat PATH + c.txt
           echo 'cat python.txt'
-          cat python.txt
+          cat  PATH + python.txt
           echo 'cat bash.txt'
-          cat bash.txt
+          cat PATH + bash.txt
             
          }
       }
