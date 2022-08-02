@@ -1,0 +1,35 @@
+pipeline {
+   agent any
+
+   stages {
+      stage('All') {
+         steps {
+          echo  'cat c.txt'
+          cat c.txt
+          echo 'cat python.txt'
+          cat python.txt
+          echo 'cat bash.txt'
+          cat bash.txt
+            
+         }
+      }
+	  stage('c') {
+            steps {
+             echo  'cat c.txt'
+             cat c.txt
+         }
+      }
+	  stage('bash') {
+            steps {
+              echo 'cat bash.txt'
+              cat bash.txt
+         }
+      }
+          stage('python') {
+          steps {
+            echo 'cat python.txt'
+            cat python.txt
+         }
+      }
+   }
+}
