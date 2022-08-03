@@ -1,8 +1,8 @@
 pipeline {
    agent any
    stages {
-      stage('deletedir') {
-      deletedir()
+      stage('Cleanup') {
+      deleteDir()
        }
       stage('All') {
           steps {
