@@ -2,7 +2,7 @@ pipeline {
    agent any
 
    stages {
-      stage('All') {
+      stage($All) {
           steps {
           echo  'Reading C++ code'
           sh 'cat c.txt'
@@ -13,19 +13,19 @@ pipeline {
             
          }
       }
-	  stage('c') {
+	  stage($C) {
             steps {
              echo  'Reading C++ code'
              sh 'cat c.txt'
          }
       }
-	  stage('bash') {
+	  stage($Bash) {
             steps {
              echo  'Reading Bash code'
              sh 'cat bash.txt'
          }
       }
-          stage('python') {
+          stage($Python) {
           steps {
              echo  'Reading Python code'
              sh 'cat python.txt'
