@@ -7,7 +7,7 @@ pipeline {
          }
      }
       stage('All') {
-         if (env.LANGUAGE == 'All') {
+         if (${LANGUAGE} == 'All') {
           steps {
                 echo 'Hello from all languages'
                 echo  'Reading C++ code'
@@ -20,7 +20,7 @@ pipeline {
             }
        }
 	  stage('C') {
-	    if (env.LANGUAGE == 'C') {
+	    if (${LANGUAGE} == 'C') {
             steps {
 	        echo 'Hello from C language'
                 echo  'Reading C++ code'
@@ -29,7 +29,7 @@ pipeline {
         }
     }
 	  stage('Bash') {
-	  if (env.LANGUAGE == 'Bash') {
+	  if (${LANGUAGE} == 'Bash') {
             steps {
 	        echo 'Hello from Bash language'
                 echo  'Reading Bash code'
@@ -38,7 +38,7 @@ pipeline {
         }
     }
          stage('Python') {
-	  if (env.LANGUAGE == 'Python') {
+	  if (${LANGUAGE} == 'Python') {
             steps {
 	        echo 'Hello from Python language'
                 echo  'Reading Python code'
