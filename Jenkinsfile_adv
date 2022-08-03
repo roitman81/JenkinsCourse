@@ -5,7 +5,7 @@ pipeline {
       deleteDir()
        }
       stage('All') {
-         if ($LANGUAGE == 'All') {
+         if (env.LANGUAGE == 'All') {
           steps {
                 echo 'Hello from all languages'
                 echo  'Reading C++ code'
@@ -18,7 +18,7 @@ pipeline {
             }
        }
 	  stage('C') {
-	    if ($LANGUAGE == 'C') {
+	    if (env.LANGUAGE == 'C') {
             steps {
 	        echo 'Hello from C language'
                 echo  'Reading C++ code'
@@ -27,7 +27,7 @@ pipeline {
         }
     }
 	  stage('Bash') {
-	  if ($LANGUAGE == 'Bash') {
+	  if (env.LANGUAGE == 'Bash') {
             steps {
 	        echo 'Hello from Bash language'
                 echo  'Reading Bash code'
@@ -36,7 +36,7 @@ pipeline {
         }
     }
          stage('Python') {
-	  if ($LANGUAGE == 'Python') {
+	  if (env.LANGUAGE == 'Python') {
             steps {
 	        echo 'Hello from Python language'
                 echo  'Reading Python code'
