@@ -14,35 +14,35 @@ pipeline {
                 sh 'cat python.txt'
                 echo 'Reading Bash code'
                 sh 'cat bash.txt'
-	   }            
-         }
-      }
+	            }            
+            }
+       }
 	  stage('C') {
             steps {
 	     if (env.LANGUAGE == 'C') {
                 echo 'Hello from C language'
                 echo  'Reading C++ code'
                 sh 'cat c.txt'              
-	   }        
-         }
-      }
+	        }        
+        }
+    }
 	  stage('Bash') {
             steps {
 	     if (env.LANGUAGE == 'Bash') {
                 echo 'Hello from Bash language'
                 echo  'Reading Bash code'
                 sh 'cat bash.txt'
-		}
-         }
-      }
+		    }
+        }
+    }
          stage('Python') {
             steps {
 	     if (env.LANGUAGE == 'Python') {
                 echo 'Hello from Python language'
                 echo  'Reading Python code'
                 sh 'cat python.txt'   
-         }
+           }
 	 }
-      }
-   }
+    } 
+  }
 }
