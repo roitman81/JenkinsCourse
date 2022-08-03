@@ -44,13 +44,14 @@ pipeline {
 	    	}
         }
     }
-         stage('Python') {
+         stage('Python') { 
             steps {
+	        env.WORKSPACE = pwd()
 		script {
 		      if (env.LANGUAGE == 'Python') {
 		      	echo 'Hello from Python language'
                       	echo  'Reading Python code'
-                      	sh 'cat  python.txt'   
+                      	sh 'cat ${env.WORKSPACE}/python.txt' 
            	      }
 	         }
             }   
