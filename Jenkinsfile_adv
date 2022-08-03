@@ -9,11 +9,11 @@ pipeline {
 	 	    if (env.LANGUAGE == 'All') {
                 	echo 'Hello from all languages'
                 	echo  'Reading C++ code'
-                	sh 'cat c.txt'
+                	sh 'cat c.cpp'
                 	echo 'Reading Python code'
-                	sh 'cat python.txt'
+                	sh 'cat python.py'
                 	echo 'Reading Bash code'
-                	sh 'cat bash.txt'
+                	sh 'cat bash.sh'
 	            }
 		    }
 		}            
@@ -25,7 +25,7 @@ pipeline {
 		      if (env.LANGUAGE == 'C') {
 			echo 'Hello from C language'
                 	echo  'Reading C++ code'
-                	sh 'cat c.txt'              
+                	sh 'cat c.cpp'              
 	     	       }
 		    }
 		}                 
@@ -36,7 +36,7 @@ pipeline {
 	    	   if (env.LANGUAGE == 'Bash') {
 	                echo 'Hello from Bash language'
                 	echo  'Reading Bash code'
-                	sh 'cat bash.txt'
+                	sh 'cat bash.sh'
 			    }
 	    	}
         }
@@ -48,7 +48,7 @@ pipeline {
 		      if (env.LANGUAGE == 'Python') {
 		      	echo 'Hello from Python language'
                       	echo  'Reading Python code'
-			sh "cat python.txt"
+			sh "cat python.py"
 	
            	      }
 	         }
