@@ -1,5 +1,6 @@
 pipeline {
    agent any
+   env.WORKSPACE = pwd()
    stages {
        stage('Cleanup') {
         steps {
@@ -46,7 +47,6 @@ pipeline {
     }
          stage('Python') { 
             steps {
-	        env.WORKSPACE = pwd()
 		script {
 		      if (env.LANGUAGE == 'Python') {
 		      	echo 'Hello from Python language'
