@@ -1,6 +1,8 @@
 pipeline {
    agent any
-
+      env {
+      LANGUAGE = @LANGUAGE
+    }
    stages {
       stage('All') {
           steps {
