@@ -8,42 +8,42 @@ pipeline {
      }
       stage('All') {
           steps {
-	   if (${LANGUAGE} == 'All') {
-                echo 'Hello from all languages'
-                echo  'Reading C++ code'
-                sh 'cat c.txt'
-                echo 'Reading Python code'
-                sh 'cat python.txt'
-                echo 'Reading Bash code'
-                sh 'cat bash.txt'
-	            }            
+	 	 if (${LANGUAGE} == 'All') {
+                	echo 'Hello from all languages'
+                	echo  'Reading C++ code'
+                	sh 'cat c.txt'
+                	echo 'Reading Python code'
+                	sh 'cat python.txt'
+                	echo 'Reading Bash code'
+                	sh 'cat bash.txt'
+	            	}            
             }
        }
 	  stage('C') {
             steps {
-	     if (${LANGUAGE} == 'C') {
-	        echo 'Hello from C language'
-                echo  'Reading C++ code'
-                sh 'cat c.txt'              
-	     }        
+	    	 if (${LANGUAGE} == 'C') {
+	        	echo 'Hello from C language'
+                	echo  'Reading C++ code'
+                	sh 'cat c.txt'              
+	     		}        
         }
     }
 	  stage('Bash') {
             steps {
 	      if (${LANGUAGE} == 'Bash') {
-	        echo 'Hello from Bash language'
-                echo  'Reading Bash code'
-                sh 'cat bash.txt'
-	    }
+	        	echo 'Hello from Bash language'
+                	echo  'Reading Bash code'
+                	sh 'cat bash.txt'
+	    		}
         }
     }
          stage('Python') {
             steps {
 	      if (${LANGUAGE} == 'Python') {
-	        echo 'Hello from Python language'
-                echo  'Reading Python code'
-                sh 'cat python.txt'   
-           }
+	        	echo 'Hello from Python language'
+                	echo  'Reading Python code'
+                	sh 'cat python.txt'   
+           		}
 	 }
     } 
   }
