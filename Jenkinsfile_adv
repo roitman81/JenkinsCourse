@@ -9,7 +9,7 @@ pipeline {
       stage('All') {
           steps {
 	        script {
-	 	        if (${LANGUAGE} == 'All') {
+	 	    if (${LANGUAGE} == 'All') {
                 	echo 'Hello from all languages'
                 	echo  'Reading C++ code'
                 	sh 'cat c.txt'
@@ -25,20 +25,19 @@ pipeline {
 	  stage('C') {
             steps {
 	          script {
-				if (${LANGUAGE} == 'C') {
-					echo 'Hello from C language'
+		      if (${LANGUAGE} == 'C') {
+			echo 'Hello from C language'
                 	echo  'Reading C++ code'
                 	sh 'cat c.txt'              
-	     	    }
+	     	       }
 		    }
-		}        
-            
+		}                 
     }
 	  stage('Bash') {
             steps {
-			  script {
-	    	    if (${LANGUAGE} == 'Bash') {
-	        	    echo 'Hello from Bash language'
+	       script {
+	    	   if (${LANGUAGE} == 'Bash') {
+	                echo 'Hello from Bash language'
                 	echo  'Reading Bash code'
                 	sh 'cat bash.txt'
 			    }
@@ -47,13 +46,13 @@ pipeline {
     }
          stage('Python') {
             steps {
-				script {
-					if (${LANGUAGE} == 'Python') {
-					echo 'Hello from Python language'
-                	echo  'Reading Python code'
-                	sh 'cat python.txt'   
-           		   }
-	            }
+		script {
+		      if (${LANGUAGE} == 'Python') {
+		      echo 'Hello from Python language'
+                      echo  'Reading Python code'
+                      sh 'cat python.txt'   
+           	      }
+	         }
             }   
         } 
 	  
