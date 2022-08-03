@@ -1,7 +1,7 @@
 pipeline {
    agent any
       env {
-      LANGUAGE = @LANGUAGE
+      LANGUAGE = $LANGUAGE
     }
    stages {
       stage('All') {
