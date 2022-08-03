@@ -42,6 +42,7 @@ pipeline {
                 echo  'Reading Python code'
                 sh 'cat python.txt'   
          }
+	 }
       }
    }
 }
