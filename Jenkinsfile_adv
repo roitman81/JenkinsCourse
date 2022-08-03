@@ -52,8 +52,10 @@ pipeline {
 		      if (env.LANGUAGE == 'Python') {
 		      	echo 'Hello from Python language'
                       	echo  'Reading Python code'
+			sh """
 			env.WORKSPACE = pwd()
-                      	sh 'cat ${env.WORKSPACE}/python.txt'
+                      	cat ${env.WORKSPACE}/python.txt 
+			"""
            	      }
 	         }
             }   
