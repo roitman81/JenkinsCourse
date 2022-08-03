@@ -4,12 +4,12 @@ pipeline {
        stage('Cleanup') {
         steps {
              deleteDir()
-         }
-     }
+            }
+        }
       stage('All') {
           steps {
-	    script {
-	 	 if (${LANGUAGE} == 'All') {
+	        script {
+	 	        if (${LANGUAGE} == 'All') {
                 	echo 'Hello from all languages'
                 	echo  'Reading C++ code'
                 	sh 'cat c.txt'
@@ -18,40 +18,44 @@ pipeline {
                 	echo 'Reading Bash code'
                 	sh 'cat bash.txt'
 	            }
-		  }            
-               }
-       }
+		    }
+		}            
+               
+    }
 	  stage('C') {
             steps {
-	       script {
-	    	  if (${LANGUAGE} == 'C') {
-	        	echo 'Hello from C language'
+	          script {
+				if (${LANGUAGE} == 'C') {
+					echo 'Hello from C language'
                 	echo  'Reading C++ code'
                 	sh 'cat c.txt'              
-	     	      }
-		 }        
-            }
+	     	    }
+		    }
+		}        
+            
     }
 	  stage('Bash') {
             steps {
-	    	  if (${LANGUAGE} == 'Bash') {
-	        	echo 'Hello from Bash language'
+			  script {
+	    	    if (${LANGUAGE} == 'Bash') {
+	        	    echo 'Hello from Bash language'
                 	echo  'Reading Bash code'
                 	sh 'cat bash.txt'
-	    	  }
-            }
+			    }
+	    	}
+        }
     }
          stage('Python') {
             steps {
-	       script {
-	    	  if (${LANGUAGE} == 'Python') {
-	        	echo 'Hello from Python language'
+				script {
+					if (${LANGUAGE} == 'Python') {
+					echo 'Hello from Python language'
                 	echo  'Reading Python code'
                 	sh 'cat python.txt'   
-           		}
-	          }
-             }   
-          } 
+           		   }
+	            }
+            }   
+        } 
 	  
-  }
+    }
 }
