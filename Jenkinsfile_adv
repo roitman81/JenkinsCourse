@@ -52,7 +52,7 @@ pipeline {
 		      if (env.LANGUAGE == 'Python') {
 		      	echo 'Hello from Python language'
                       	echo  'Reading Python code'
-			cat python.txt 
+			sh cat python.txt 
 	
            	      }
 	         }
