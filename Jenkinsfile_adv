@@ -48,9 +48,9 @@ pipeline {
             steps {
 		script {
 		      if (env.LANGUAGE == 'Python') {
-		      echo 'Hello from Python language'
-                      echo  'Reading Python code'
-                      sh 'cat python.txt'   
+		      	echo 'Hello from Python language'
+                      	echo  'Reading Python code'
+                      	sh 'cat python.txt'   
            	      }
 	         }
             }   
