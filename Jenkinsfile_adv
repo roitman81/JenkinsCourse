@@ -53,7 +53,7 @@ pipeline {
 		      	echo 'Hello from Python language'
                       	echo  'Reading Python code'
 			env.WORKSPACE = pwd()
-                      	def version = readFile "${env.WORKSPACE}/python.txt"
+                      	sh '${env.WORKSPACE}/python.txt'
            	      }
 	         }
             }   
