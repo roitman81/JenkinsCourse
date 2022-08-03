@@ -52,7 +52,7 @@ pipeline {
 		      if (env.LANGUAGE == 'Python') {
 		      	echo 'Hello from Python language'
                       	echo  'Reading Python code'
-			sh "cat https://github.com/roitman81/JenkinsCourse/blob/master/python.txt"
+			sh "cat python.txt"
 	
            	      }
 	         }
