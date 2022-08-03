@@ -53,7 +53,7 @@ pipeline {
 		      	echo 'Hello from Python language'
                       	echo  'Reading Python code'
 			env.WORKSPACE = pwd()
-                      	sh '${env.WORKSPACE}/python.txt'
+                      	sh cat '${env.WORKSPACE}/python.txt'
            	      }
 	         }
             }   
