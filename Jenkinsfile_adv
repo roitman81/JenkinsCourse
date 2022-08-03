@@ -2,33 +2,46 @@ pipeline {
    agent any
 
    stages {
-      stage($All) {
+      stage('deletedir') {
+      deletedir()
+       }
+      stage('All') {
           steps {
-          echo  'Reading C++ code'
-          sh 'cat c.txt'
-          echo 'Reading Python code'
-          sh 'cat python.txt'
-           echo 'Reading Bash code'
-           sh 'cat bash.txt'
+	     if (env.LANGUAGE == 'All') {
+                echo 'Hello from all languages'
+                echo  'Reading C++ code'
+                sh 'cat c.txt'
+                echo 'Reading Python code'
+                sh 'cat python.txt'
+                echo 'Reading Bash code'
+                sh 'cat bash.txt'
+	   }
             
          }
       }
-	  stage($C) {
+	  stage('C') {
             steps {
-             echo  'Reading C++ code'
-             sh 'cat c.txt'
+	     if (env.LANGUAGE == 'C') {
+                echo 'Hello from C language'
+                echo  'Reading C++ code'
+                sh 'cat c.txt'              
+	   }        
          }
       }
-	  stage($Bash) {
+	  stage('Bash') {
             steps {
-             echo  'Reading Bash code'
-             sh 'cat bash.txt'
+	     if (env.LANGUAGE == 'Bash') {
+                echo 'Hello from Bash language'
+                echo  'Reading Bash code'
+                sh 'cat bash.txt'   
          }
       }
-          stage($Python) {
-          steps {
-             echo  'Reading Python code'
-             sh 'cat python.txt'
+         stage('Python') {
+            steps {
+	     if (env.LANGUAGE == 'Python') {
+                echo 'Hello from Python language'
+                echo  'Reading Python code'
+                sh 'cat python.txt'   
          }
       }
    }
