@@ -53,6 +53,7 @@ pipeline {
 		      	echo 'Hello from Python language'
                       	echo  'Reading Python code'
 			sh """
+			  #!/bin/bash
 			  cat python.txt 
 			"""
            	      }
