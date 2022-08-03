@@ -1,10 +1,10 @@
 pipeline {
    agent any
    stages {
-    steps {
-      stage('Cleanup') {
-      deleteDir()
-      }
+       stage('Cleanup') {
+        steps {
+             deleteDir()
+         }
      }
       stage('All') {
          if (env.LANGUAGE == 'All') {
